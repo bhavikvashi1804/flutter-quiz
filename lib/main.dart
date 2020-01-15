@@ -41,15 +41,15 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text('Question Text'),
             RaisedButton(
-              onPressed: answerQ,
+              onPressed:() =>print("Selected Answer : 1"),
               child: Text("Answer 1"),
             ),
             RaisedButton(
-              onPressed:answerQ,
+              onPressed:() =>print("Selected Answer : 2"),
               child: Text("Answer 2"),
             ),
             RaisedButton(
-              onPressed:answerQ,
+              onPressed:() =>print("Selected Answer : 3"),
               child: Text("Answer 3"),
             ),
           ],
