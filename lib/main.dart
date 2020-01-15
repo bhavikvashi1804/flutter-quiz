@@ -19,14 +19,42 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var questions=[
+    'What\'s your favorite color?',
+    'What\'s your favorite animal?',
+    'Who\'s your favorite instructor?',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("First Application"),
+        title: Text("Quiz"),
       ),
       body: Center(
-        child: Text('Hello World'),
+        child: Column(
+          
+          children: <Widget>[
+            Text('Question Text'),
+            RaisedButton(
+              onPressed: (){
+
+              },
+              child: Text("Answer 1"),
+            ),
+            RaisedButton(
+              onPressed: (){
+
+              },
+              child: Text("Answer 2"),
+            ),
+            RaisedButton(
+              onPressed: (){
+
+              },
+              child: Text("Answer 3"),
+            ),
+          ],
+        ),
       ),
      );
   }
