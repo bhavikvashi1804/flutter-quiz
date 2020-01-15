@@ -24,6 +24,11 @@ class _MyHomePageState extends State<MyHomePage> {
     'What\'s your favorite animal?',
     'Who\'s your favorite instructor?',
   ];
+
+  void answerQ(){
+    print("Answer is choosen");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,21 +41,15 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text('Question Text'),
             RaisedButton(
-              onPressed: (){
-
-              },
+              onPressed: answerQ,
               child: Text("Answer 1"),
             ),
             RaisedButton(
-              onPressed: (){
-
-              },
+              onPressed:answerQ,
               child: Text("Answer 2"),
             ),
             RaisedButton(
-              onPressed: (){
-
-              },
+              onPressed:answerQ,
               child: Text("Answer 3"),
             ),
           ],
