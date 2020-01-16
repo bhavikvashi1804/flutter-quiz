@@ -19,23 +19,26 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var questions=[
+  
+  int _questionIndex=0;
+
+  var _questions=[
     'What\'s your favorite color?',
     'What\'s your favorite animal?',
     'Who\'s your favorite instructor?',
   ];
 
-  void answerQ(){
+  void _answerQ(){
   
     setState(() {
-      questionIndex++;
+      _questionIndex++;
     });
     
     print("Answer is choosen");
-    print("Question No: $questionIndex");
+    print("Question No: $_questionIndex");
   }
 
-  int questionIndex=0;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -46,17 +49,17 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: <Widget>[
-            Text(questions[questionIndex]),
+            Text(_questions[_questionIndex]),
             RaisedButton(
-              onPressed:answerQ,
+              onPressed:_answerQ,
               child: Text("Answer 1"),
             ),
             RaisedButton(
-              onPressed:answerQ,
+              onPressed:_answerQ,
               child: Text("Answer 2"),
             ),
             RaisedButton(
-              onPressed:answerQ,
+              onPressed:_answerQ,
               child: Text("Answer 3"),
             ),
           ],
