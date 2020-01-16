@@ -26,8 +26,14 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   void answerQ(){
+  
+    questionIndex++;
+  
     print("Answer is choosen");
+    print("Question No: $questionIndex");
   }
+
+  int questionIndex=0;
 
   @override
   Widget build(BuildContext context) {
@@ -37,19 +43,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          
           children: <Widget>[
-            Text('Question Text'),
+            Text(questions[questionIndex]),
             RaisedButton(
-              onPressed:() =>print("Selected Answer : 1"),
+              onPressed:answerQ,
               child: Text("Answer 1"),
             ),
             RaisedButton(
-              onPressed:() =>print("Selected Answer : 2"),
+              onPressed:answerQ,
               child: Text("Answer 2"),
             ),
             RaisedButton(
-              onPressed:() =>print("Selected Answer : 3"),
+              onPressed:answerQ,
               child: Text("Answer 3"),
             ),
           ],
