@@ -27,8 +27,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void answerQ(){
   
-    questionIndex++;
-  
+    setState(() {
+      questionIndex++;
+    });
+    
     print("Answer is choosen");
     print("Question No: $questionIndex");
   }
