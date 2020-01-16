@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './question.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -49,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: <Widget>[
-            Text(_questions[_questionIndex]),
+            QuestionWidget(_questions[_questionIndex]),
             RaisedButton(
               onPressed:_answerQ,
               child: Text("Answer 1"),
