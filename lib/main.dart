@@ -24,24 +24,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   
   int _questionIndex=0;
-
-  
-
-  void _answerQ(){
-  
-    setState(() {
-      _questionIndex++;
-    });
-    
-    print("Answer is choosen");
-    print("Question No: $_questionIndex");
-  }
-
-  
-
-  @override
-  Widget build(BuildContext context) {
-    const _questions=[
+  //you can also use static const
+  final _questions=const [
     {
       'questionText':' What\'s your favorite color?',
       'answers':['Red','Black','Green','Blue'],
@@ -56,11 +40,29 @@ class _MyHomePageState extends State<MyHomePage> {
     },
     
   ];
+
+  
+
+  void _answerQ(){
+  
+   
+    setState(() {
+      _questionIndex++;
+    });
+    
+    print("Answer is choosen");
+    print("Question No: $_questionIndex");
+  }
+
+  
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Quiz"),
       ),
-      body: Center(
+      body: (_questionIndex<_questions.length)?Center(
         child: Column(
           children: <Widget>[
             QuestionWidget(_questions[_questionIndex]['questionText']),
@@ -75,7 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
             //here .map takes one element and provide it to Answer widget
           ],
         ),
-      ),
+      ):
+      Center(child: Text('You did it'),),
      );
   }
 }
