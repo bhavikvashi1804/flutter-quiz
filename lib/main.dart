@@ -24,28 +24,83 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   
   int _questionIndex=0;
+  int _totalScore=0;
+
   //you can also use static const
   final _questions=const [
     {
       'questionText':' What\'s your favorite color?',
-      'answers':['Red','Black','Green','Blue'],
+      'answers':[
+        {
+          'text':'Red',
+          'score':10,
+        },
+        {
+          'text':'Black',
+          'score':7,
+        },
+        {
+          'text':'Green',
+          'score':5,
+        },
+        {
+          'text':'Blue',
+          'score':3,
+        },
+      ],
     },
     {
       'questionText': 'What\'s your favorite animal?',
-      'answers':['Rabbit','Snake','Dog','Cat'],
+      'answers':[
+        {
+          'text':'Rabbit',
+          'score':10,
+        },
+        {
+          'text':'Snake',
+          'score':7,
+        },
+        {
+          'text':'Dog',
+          'score':5,
+        },
+        {
+          'text':'Cat',
+          'score':7,
+        },
+      ],
     },
     {
       'questionText': 'Who\'s your favorite instructor?',
-      'answers':['Pawan','Yash','Raj','Meet'],
+      'answers':[
+        {
+          'text':'Pawan',
+          'score':10,
+        },
+        {
+          'text':'Yash',
+          'score':7,
+        },
+        {
+          'text':'Raj',
+          'score':5,
+        },
+        {
+          'text':'Meet',
+          'score':7,
+        },
+      ],
     },
     
   ];
 
   
 
-  void _answerQ(){
+  void _answerQ(int score){
   
-   
+    //_totalScore=_totalScore+score; below line is same as this 
+    _totalScore+=score;
+
     setState(() {
       _questionIndex++;
     });
@@ -66,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
         questionIndex: _questionIndex,
         questions: _questions,
         onAnswerClick: _answerQ,
-        ):Result(),
+        ):Result(_totalScore),
      );
   }
 }

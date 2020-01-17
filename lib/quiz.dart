@@ -21,9 +21,10 @@ class Quiz extends StatelessWidget {
         child: Column(
           children: <Widget>[
             QuestionWidget(questions[questionIndex]['questionText']),
-            ...(questions[questionIndex]['answers'] as List<String>).map(
+            ...(questions[questionIndex]['answers'] as List< Map<String,Object> >).map(
               (answer){
-                return Answer(answer,onAnswerClick);
+                return Answer(answer['text'],()=>onAnswerClick(answer['score']));
+                //write this to get address of function 
               }
             ).toList()
 
