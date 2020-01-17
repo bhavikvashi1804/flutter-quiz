@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
-import './answer.dart';
+import './quiz.dart';
 
 void main() => runApp(MyApp());
 
@@ -62,22 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("Quiz"),
       ),
-      body: (_questionIndex<_questions.length)?Center(
-        child: Column(
-          children: <Widget>[
-            QuestionWidget(_questions[_questionIndex]['questionText']),
-            ...(_questions[_questionIndex]['answers'] as List<String>).map(
-              (answer){
-                return Answer(answer,_answerQ);
-              }
-            ).toList()
-
-            //here we have used spread operator to add answer widget list with question
-            //.map is used to map one element 
-            //here .map takes one element and provide it to Answer widget
-          ],
-        ),
-      ):
+      body: (_questionIndex<_questions.length)?Quiz(_questions,_answerQ,_questionIndex):
       Center(child: Text('You did it'),),
      );
   }
