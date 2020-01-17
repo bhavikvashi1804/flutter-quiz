@@ -25,21 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
   
   int _questionIndex=0;
 
-  var _questions=[
-    {
-      'questionText':' What\'s your favorite color?',
-      'answers':['Red','Black','Green','Blue'],
-    },
-    {
-      'questionText': 'What\'s your favorite animal?',
-      'answers':['Rabbit','Snake','Dog','Cat'],
-    },
-    {
-      'questionText': 'Who\'s your favorite instructor?',
-      'answers':['Pawan','Yash','Raj','Meet'],
-    },
-    
-  ];
+  
 
   void _answerQ(){
   
@@ -55,6 +41,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    const _questions=[
+    {
+      'questionText':' What\'s your favorite color?',
+      'answers':['Red','Black','Green','Blue'],
+    },
+    {
+      'questionText': 'What\'s your favorite animal?',
+      'answers':['Rabbit','Snake','Dog','Cat'],
+    },
+    {
+      'questionText': 'Who\'s your favorite instructor?',
+      'answers':['Pawan','Yash','Raj','Meet'],
+    },
+    
+  ];
     return Scaffold(
       appBar: AppBar(
         title: Text("Quiz"),
