@@ -95,6 +95,12 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   
+  void _resetQuiz(){
+    setState(() {
+      _totalScore=0;
+      _questionIndex=0;
+    });
+  }
 
   void _answerQ(int score){
   
@@ -104,9 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _questionIndex++;
     });
-    
-    print("Answer is choosen");
-    print("Question No: $_questionIndex");
+   
   }
 
   
@@ -121,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
         questionIndex: _questionIndex,
         questions: _questions,
         onAnswerClick: _answerQ,
-        ):Result(_totalScore),
+        ):Result(_totalScore,_resetQuiz),
      );
   }
 }
