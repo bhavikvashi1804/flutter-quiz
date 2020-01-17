@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './quiz.dart';
+import './result.dart';
 
 void main() => runApp(MyApp());
 
@@ -65,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
         questionIndex: _questionIndex,
         questions: _questions,
         onAnswerClick: _answerQ,
-        ):Center(child: Text('You did it'),),
+        ):Result(),
      );
   }
 }
