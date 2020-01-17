@@ -61,8 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("Quiz"),
       ),
-      body: (_questionIndex<_questions.length)?Quiz(_questions,_answerQ,_questionIndex):
-      Center(child: Text('You did it'),),
+      body: (_questionIndex<_questions.length)?Quiz(
+        questionIndex: _questionIndex,
+        questions: _questions,
+        onAnswerClick: _answerQ,
+        ):Center(child: Text('You did it'),),
      );
   }
 }
