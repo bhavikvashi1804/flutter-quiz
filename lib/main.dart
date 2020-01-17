@@ -26,9 +26,19 @@ class _MyHomePageState extends State<MyHomePage> {
   int _questionIndex=0;
 
   var _questions=[
-    'What\'s your favorite color?',
-    'What\'s your favorite animal?',
-    'Who\'s your favorite instructor?',
+    {
+      'questionText':' What\'s your favorite color?',
+      'answers':['Red','Black','Green','Blue'],
+    },
+    {
+      'questionText': 'What\'s your favorite animal?',
+      'answers':['Rabbit','Snake','Dog','Cat'],
+    },
+    {
+      'questionText': 'Who\'s your favorite instructor?',
+      'answers':['Pawan','Yash','Raj','Meet'],
+    },
+    
   ];
 
   void _answerQ(){
@@ -52,10 +62,16 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: <Widget>[
-            QuestionWidget(_questions[_questionIndex]),
-            Answer(_answerQ),
-            Answer(_answerQ),
-            Answer(_answerQ),
+            QuestionWidget(_questions[_questionIndex]['questionText']),
+            ...(_questions[_questionIndex]['answers'] as List<String>).map(
+              (answer){
+                return Answer(answer,_answerQ);
+              }
+            ).toList()
+
+            //here we have used spread operator to add answer widget list with question
+            //.map is used to map one element 
+            //here .map takes one element and provide it to Answer widget
           ],
         ),
       ),
