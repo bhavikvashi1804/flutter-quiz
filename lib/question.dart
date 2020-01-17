@@ -7,6 +7,17 @@ class QuestionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(questionText);
+    return Container(
+      width: double.infinity,
+      //double.infinity means max width
+      margin: EdgeInsets.all(20.0),
+      child: Text(
+        questionText,
+        style:TextStyle(
+          fontSize: 20,
+        ),
+        textAlign: TextAlign.center,
+      ),
+    );
   }
 }
